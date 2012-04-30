@@ -15,11 +15,11 @@ def ip_search()
      dest = File.new(data_file, 'w+')
      dest.puts(data.to_json)
    end
-   return 
+   return data
 end
 
 Facter.add("country") do
     setcode do
-      return ip_search["country"]
+      ip_search["country"]
     end
 end
